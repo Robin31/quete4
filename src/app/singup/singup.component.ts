@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Order } from '../models/order.model';
@@ -6,7 +6,7 @@ import { Order } from '../models/order.model';
 @Component({
   selector: 'app-singup',
   standalone: true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, CommonModule],
   templateUrl: './singup.component.html',
   styleUrl: './singup.component.css'
 })

@@ -1,4 +1,4 @@
-<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+<form #Order="ngForm" (ngSubmit)="Order.valid && onSubmit()">
 
   <fieldset>
     <label for="firstName-order">Prénom</label>
@@ -7,7 +7,7 @@
   </fieldset>
 
   <!-- Message d'erreurs de firstName -->
-  <div *ngIf="firstName.errors">
+  <div *ngIf="Order.submitted && firstName.errors">
     <span *ngIf="firstName.errors?.['required']">Le champ Prénom est requis</span>
     <span *ngIf="firstName.errors?.['minlength']">Le prenom doit comporter au moins 3 caractères</span>
     <span *ngIf="firstName.errors?.['maxlength']">Le prenom ne doit pas dépasser 15 caractères</span>
@@ -21,7 +21,7 @@
   </fieldset>
 
   <!-- Message d'erreurs de lastName -->
-  <div *ngIf="lastName.errors">
+  <div *ngIf="Order.submitted && lastName.errors">
     <span *ngIf="lastName.errors?.['required']">Le champ Nom est requis</span>
     <span *ngIf="lastName.errors?.['minlength']">Le nom doit comporter au moins 3 caractères</span>
     <span *ngIf="lastName.errors?.['maxlength']">Le nom ne doit pas dépasser 15 caractères</span>
@@ -35,7 +35,7 @@
   </fieldset>
 
   <!-- Message d'erreurs de password -->
-  <div *ngIf="password.errors">
+  <div *ngIf="Order.submitted && password.errors">
     <span *ngIf="password.errors?.['required']">Le champ mot de passe est requis</span>
     <span *ngIf="password.errors?.['minlength']">Le mot de passe doit comporter au moins 3 caractères</span>
     <span *ngIf="password.errors?.['maxlength']">Le mot de passe ne doit pas dépasser 15 caractères</span>
@@ -49,7 +49,7 @@
   </fieldset>
 
   <!-- Message d'erreurs de email -->
-  <div *ngIf="email.errors">
+  <div *ngIf="Order.submitted && email.errors">
     <span *ngIf="email.errors?.['required']">Le champ email est requis</span>
     <span *ngIf="email.errors?.['email']">L'adresse email doit être valide</span>
   </div>
