@@ -6,6 +6,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { MenuComponent } from './menu/menu.component';
 import { SingupComponent } from './singup/singup.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { SingupComponent } from './singup/singup.component';
     DirectivesComponent,
     MenuComponent,
     SingupComponent,
+    SearchMovieComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
