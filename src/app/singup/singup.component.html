@@ -1,0 +1,60 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <fieldset>
+    <label for="firstName-order">Prénom</label>
+    <input id="firstName-order" name="firstName-order" type="text" [(ngModel)]="newOrder.firstName" #firstName="ngModel"
+      required minlength="3" maxlength="15" />
+  </fieldset>
+
+  <!-- Message d'erreurs de firstName -->
+  <div *ngIf="firstName.errors">
+    <span *ngIf="firstName.errors?.['required']">Le champ Prénom est requis</span>
+    <span *ngIf="firstName.errors?.['minlength']">Le prenom doit comporter au moins 3 caractères</span>
+    <span *ngIf="firstName.errors?.['maxlength']">Le prenom ne doit pas dépasser 15 caractères</span>
+  </div>
+
+
+  <fieldset>
+    <label for="lastName-order">Nom</label>
+    <input id="lastName-order" name="lastName-order" [(ngModel)]="newOrder.lastName" #lastName="ngModel" type="text"
+      required min="3" maxlength="15">
+  </fieldset>
+
+  <!-- Message d'erreurs de lastName -->
+  <div *ngIf="lastName.errors">
+    <span *ngIf="lastName.errors?.['required']">Le champ Nom est requis</span>
+    <span *ngIf="lastName.errors?.['minlength']">Le nom doit comporter au moins 3 caractères</span>
+    <span *ngIf="lastName.errors?.['maxlength']">Le nom ne doit pas dépasser 15 caractères</span>
+  </div>
+
+
+  <fieldset>
+    <label for="password-order">Mot de passe</label>
+    <input id="password-order" name="password-order" type="text" [(ngModel)]="newOrder.password" #password="ngModel"
+      required min="3" maxlength="15">
+  </fieldset>
+
+  <!-- Message d'erreurs de password -->
+  <div *ngIf="password.errors">
+    <span *ngIf="password.errors?.['required']">Le champ mot de passe est requis</span>
+    <span *ngIf="password.errors?.['minlength']">Le mot de passe doit comporter au moins 3 caractères</span>
+    <span *ngIf="password.errors?.['maxlength']">Le mot de passe ne doit pas dépasser 15 caractères</span>
+  </div>
+
+
+  <fieldset>
+    <label for="email-order">Email</label>
+    <input id="email-order" name="email-order" type="email" [(ngModel)]="newOrder.email" #email="ngModel" required
+      email>
+  </fieldset>
+
+  <!-- Message d'erreurs de email -->
+  <div *ngIf="email.errors">
+    <span *ngIf="email.errors?.['required']">Le champ email est requis</span>
+    <span *ngIf="email.errors?.['email']">L'adresse email doit être valide</span>
+  </div>
+
+
+  <button type="reset">Restaurer</button>
+  <button type="submit">Inscription</button>
+</form>

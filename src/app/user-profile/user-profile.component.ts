@@ -1,10 +1,11 @@
+import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf, CommonModule],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss'
 })

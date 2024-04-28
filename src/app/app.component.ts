@@ -5,6 +5,7 @@ import { BlockComponent } from './block/block.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { MenuComponent } from './menu/menu.component';
+import { SingupComponent } from './singup/singup.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { MenuComponent } from './menu/menu.component';
     BlockComponent,
     UserProfileComponent,
     DirectivesComponent,
-    MenuComponent
+    MenuComponent,
+    SingupComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
